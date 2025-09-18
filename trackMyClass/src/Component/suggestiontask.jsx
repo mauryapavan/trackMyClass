@@ -11,9 +11,83 @@ const Suggestiontask = ({ data }) => {
   let [loding, setloading] = useState(true);
   let [sugtask, setsugtask] = useState([{ task: "", practice: [] }])
   async function task() {
-    let res = await axios.post("https://trackmyclass-two5.onrender.com/suggest", { goals: data.goals.join(","), strengths: data.strengths.join(","), intrests: data.interests.join(","), weakness: data.weaknes.join(",") })
-   console.log(res.data.data[0])
-    setsugtask(res.data.data[0]);
+    // let res = await axios.post("https://trackmyclass-two5.onrender.com/suggest", { goals: data.goals.join(","), strengths: data.strengths.join(","), intrests: data.interests.join(","), weakness: data.weaknes.join(",") })
+   // console.log(res.data.data[0])
+    setsugtask([
+  {
+    task: "Practice basic JavaScript array methods",
+    practice: [
+      "Review map, filter, and reduce concepts",
+      "Write a function using map to double numbers",
+      "Create a filter to remove negative numbers",
+      "Reduce an array to calculate total sum"
+    ]
+  },
+  {
+    task: "Improve typing speed",
+    practice: [
+      "Use an online typing test for 5 minutes",
+      "Focus on proper finger placement",
+      "Repeat test and track accuracy",
+      "Note progress in a spreadsheet"
+    ]
+  },
+  {
+    task: "Read a chapter of a self-improvement book",
+    practice: [
+      "Choose a chapter focused on productivity",
+      "Highlight key insights",
+      "Write a 3-sentence summary",
+      "Think of one idea to apply today"
+    ]
+  },
+  {
+    task: "Build a small React component",
+    practice: [
+      "Create a new React file in your project",
+      "Build a button component with props",
+      "Add basic Tailwind styling",
+      "Test by rendering it inside App.jsx"
+    ]
+  },
+  {
+    task: "Practice mindfulness meditation",
+    practice: [
+      "Set a 10-minute timer",
+      "Sit comfortably and close your eyes",
+      "Focus on breathing slowly",
+      "Note distractions and gently refocus"
+    ]
+  },
+  {
+    task: "Solve one easy coding challenge",
+    practice: [
+      "Pick a challenge on HackerRank or LeetCode",
+      "Read the problem carefully",
+      "Plan your approach before coding",
+      "Write and test the solution"
+    ]
+  },
+  {
+    task: "Organize desktop and files",
+    practice: [
+      "Delete unnecessary files",
+      "Create folders for projects",
+      "Backup important documents",
+      "Rename files for clarity"
+    ]
+  },
+  {
+    task: "Learn a new keyboard shortcut",
+    practice: [
+      "Pick a shortcut relevant to your IDE or OS",
+      "Practice using it in a real task",
+      "Repeat 10 times for muscle memory",
+      "Teach the shortcut to someone else"
+    ]
+  }
+]
+);
     setloading(!loding);
   }
   useEffect(() => {
