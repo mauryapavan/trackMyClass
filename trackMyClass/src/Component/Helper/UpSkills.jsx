@@ -11,7 +11,7 @@ const UpSkills = ({data}) => {
 
 
     async function task() {
-        let res = await axios.post("https://trackmyclass-rl3p.onrender.com/sugCourse", { goals: data.goals.join(","), interests: data.interests.join(",")})
+        let res = await axios.post("https://trackmyclass-two5.onrender.com/sugCourse", { goals: data.goals.join(","), interests: data.interests.join(",")})
         console.log(res.data.data[0])
         setCourses(res.data.data[0]);
         localStorage.setItem("courses",JSON.stringify(res.data.data[0]))
