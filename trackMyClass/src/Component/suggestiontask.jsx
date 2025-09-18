@@ -11,7 +11,7 @@ const Suggestiontask = ({ data }) => {
   let [loding, setloading] = useState(true);
   let [sugtask, setsugtask] = useState([{ task: "", practice: [] }])
   async function task() {
-    let res = await axios.post("https://trackmyclass-rl3p.onrender.com/suggest", { goals: data.goals.join(","), strengths: data.strengths.join(","), intrests: data.interests.join(","), weakness: data.weaknes.join(",") })
+    let res = await axios.post("https://trackmyclass-two5.onrender.com/suggest", { goals: data.goals.join(","), strengths: data.strengths.join(","), intrests: data.interests.join(","), weakness: data.weaknes.join(",") })
    console.log(res.data.data[0])
     setsugtask(res.data.data[0]);
     setloading(!loding);
