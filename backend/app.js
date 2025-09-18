@@ -7,15 +7,19 @@ import SuggestTask from "./suggesttask/task.js";
 import SuggestCourse from "./SuggestCourse/SuugesCourse.js";
 
 
+
 dotenv.config();
 
+
 const app = express();
+const PORT = process.env.PORT || 4444;
 
 app.use(cors({
   origin: "https://trackmyclass-1-0eou.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+app.options("*", cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -33,6 +37,6 @@ app.post("/sugCourse",SuggestCourse);
 
 
 
-app.listen(4444, () => {
+app.listen(PORT, () => {
   console.log("app is listen on 4444")
 })
