@@ -19,7 +19,7 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-app.options("*", cors());
+app.options("/*", cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
